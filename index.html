@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical UI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="overlay">
+            <div class="validation-section">
+                <input type="checkbox" id="termsCheckbox">
+                <label for="termsCheckbox">I agree to the terms and conditions</label>
+                <div id="error-message" class="error-message"></div>
+            </div>
+            <button class="get-started-btn" onclick="validateForm()">Get Started</button>
+        </div>
+    </div>
+    <style>
+        button{
+            display: block;
+            margin:auto;
+            text-align: center;
+            background-color: #c14343;
+            color: white;
+            padding: 15px 30px;
+            font-size: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+}
+.validation-section{
+    position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+}
+        
+        body{
+            background-image: url(bg.jpg);
+            background-repeat:no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+h1 {
+    color: #333;
+}
+
+p {
+    color: #666;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+     <script>
+        function validateForm() {
+            const termsCheckbox = document.getElementById('termsCheckbox');
+            const errorMessage = document.getElementById('error-message');
+
+            if (!termsCheckbox.checked) {
+                errorMessage.textContent = 'Please agree to the terms and conditions before proceeding.';
+                errorMessage.style.display = 'block';
+            } else {
+                errorMessage.style.display = 'none';
+                // Redirect to the next page (upload.html)
+                window.location.href = 'page3.html';
+            }
+        }
+    </script>
+
+    
+    
+</body>
+</html>
